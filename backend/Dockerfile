@@ -1,8 +1,8 @@
 FROM golang:1.16.3
 
-RUN go get github.com/labstack/echo/...
+WORKDIR /go/src
+COPY ./src /go/src
 
-WORKDIR /backend
-ADD . /backend
+RUN go get github.com/labstack/echo/
 
-CMD ["go", "run", "main.go"]
+CMD ["go", "run", "server.go"]
