@@ -15,10 +15,3 @@ terraform {
     }
   }
 }
-
-resource "aws_vpc" "myVPC" {
-    cidr_block = "192.168.1.0/24"
-    instance_tenancy = "default"
-    enable_dns_support = "true"
-    enable_dns_hostnames = "false"
-}
