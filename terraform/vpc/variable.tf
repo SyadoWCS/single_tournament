@@ -1,7 +1,2 @@
-variable "vpc" {
-    type = map(string)
-
-    default = {
-        "default.cidr" = "192.168.1.0/24"
-    }
-}
+variable vpc_cidr {}
+variable vpc_tags_name {}
