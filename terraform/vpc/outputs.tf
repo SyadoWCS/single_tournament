@@ -1,5 +1,4 @@
-output "vpc" {
-    value = {
-        "vpc_id" = aws_vpc.single-tournament.id
-    }
+output "vpc_id" {
+    description = "ID of project VPC"
+    value       = "${aws_vpc.vpc.id}"
 }
