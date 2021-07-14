@@ -23,3 +23,7 @@ module "vpc" {
   vpc_cidr = var.aws_vpc_cidr
   vpc_tags_name = var.aws_vpc_tags_name
 }
+
+output "single-tournament-vpc" {
+  value = "${module.vpc.vpc_id}"
+}
