@@ -1,0 +1,14 @@
+# backend mod sum file
+backend/src/go.mod
+backend/src/go.sum
+
+#  Local .terraform directories
+**/.terraform/*
+terraform/.terraform.lock.hcl
+
+# .tfstate files
+terraform/*.tfstate
+terraform/*.tfstate.*
+
+# .tfvars files
+terraform/*.tfvars
