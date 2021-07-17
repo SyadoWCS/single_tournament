@@ -1,17 +1,22 @@
 version: '3.8'
+
 services:
   backend:
-    build: 
+    container_name: single-tournament-backend
+    build:
       context: ./backend
     ports:
-      - 3000:3000
+      - 8080:8080
+#    tty: true
+#    stdin_open: true
+#    command: /bin/sh
 
   frontend:
+    container_name: single-tournament-frontend
     build:
-      volumes:
-        - ./front:/app
-      ports:
-        - '3002:3002'
-      tty: true
-      stdin_open: true
-      command: npm run serve
+      context: ./frontend
+    ports:
+      - '80:80'
+#    tty: true
+#    stdin_open: true
+#    command: /bin/sh
