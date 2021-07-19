@@ -1,7 +1,16 @@
 version: '3.8'
+
 services:
   backend:
-    build: 
+    container_name: single-tournament-backend
+    build:
       context: ./backend
     ports:
-      - 8080:8080
+      - 80:80
+
+  frontend:
+    container_name: single-tournament-frontend
+    build:
+      context: ./frontend
+    ports:
+      - '8080:8080'
