@@ -1,0 +1,10 @@
+variable aws_access_key {}
+variable aws_secret_key {}
+variable aws_account_id {}
+variable aws_region {}
+variable aws_ecr_front_repository_name {}
+variable aws_ecr_front_image_name {}
+variable aws_ecr_front_repository_uri {}
+variable aws_ecr_back_repository_name {}
+variable aws_ecr_back_image_name {}
+variable aws_ecr_back_repository_uri {}
