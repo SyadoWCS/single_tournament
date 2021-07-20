@@ -23,11 +23,3 @@ module "ecr" {
   back_image_name = var.aws_ecr_back_image_name
   back_repository_uri = var.aws_ecr_back_repository_uri
 }
-
-/*module "ecs-fargate-frontend" {
-  source   = "./frontend"
-}*/
-
-/*module "ecs-fargate-backend" {
-  source   = "./backend"
-}*/
