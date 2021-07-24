@@ -1,5 +1,9 @@
-# backend mod sum file
-backend/src/go.sum
+# backend go mod sum file
+backend/go.sum
+backend/go.mod
+
+# docker-compose .env file
+.env
 
 #  Local .terraform directories
 **/.terraform/*
