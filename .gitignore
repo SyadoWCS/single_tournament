@@ -1,6 +1,5 @@
 # backend go mod sum file
 backend/go.sum
-backend/go.mod
 
 # docker-compose .env file
 .env
