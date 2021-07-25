@@ -2,9 +2,12 @@ package controller
 
 import (
 	"net/http"
+	"strconv"
+	"time"
 
 	"github.com/SyadoWCS/single_tournament/database"
 	"github.com/SyadoWCS/single_tournament/model"
+	jwt "github.com/dgrijalva/jwt-go"
 	"github.com/labstack/echo/v4"
 	"golang.org/x/crypto/bcrypt"
 )
@@ -71,5 +74,26 @@ func Login(c echo.Context) error {
 		})
 	}
 
-	return c.JSON(http.StatusOK, user)
+	// JWT(Json Web Token)
+	claims := jwt.StandardClaims{
+		Issuer:    strconv.Itoa(int(user.ID)),            // stringに型変換
+		ExpiresAt: time.Now().Add(time.Hour * 24).Unix(), // 有効期限
+	}
+	jwtToken := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
+	token, err := jwtToken.SignedString([]byte("secret"))
+	if err != nil {
+		return c.NoContent(http.StatusInternalServerError)
+	}
+
+	// Cookie
+	cookie := new(http.Cookie)
+	cookie.Name = "jwt"
+	cookie.Value = token
+	cookie.Expires = time.Now().Add(24 * time.Hour)
+	cookie.HttpOnly = true
+	c.SetCookie(cookie)
+
+	return c.JSON(http.StatusOK, echo.Map{
+		"jwt": token,
+	})
 }
