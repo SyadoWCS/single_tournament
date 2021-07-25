@@ -17,6 +17,8 @@ var (
 	endpoint       = os.Getenv("MYSQL_ENDPOINT")
 	dbName         = os.Getenv("MYSQL_DATABASE")
 	datasourceName = fmt.Sprintf(schema, username, password, endpoint, dbName)
+	// DBインスタンス
+	DB *gorm.DB
 )
 
 func Connetct() {
@@ -25,5 +27,9 @@ func Connetct() {
 	if err != nil {
 		panic("DBに接続できません")
 	}
+
+	// コネクション情報追加(パッケージ外からDBにアクセスできるようにするため)
+	DB = db
+
 	db.AutoMigrate(&model.User{})
 }
