@@ -9,4 +9,5 @@ func Setup(app *echo.Echo) {
 	app.GET("/", controller.Home)
 	app.GET("/other", controller.Other)
 	app.POST("/api/register", controller.Register)
+	app.POST("/api/login", controller.Login)
 }
