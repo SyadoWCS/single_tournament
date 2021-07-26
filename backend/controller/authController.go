@@ -12,6 +12,10 @@ import (
 	"golang.org/x/crypto/bcrypt"
 )
 
+type Claims struct {
+	jwt.StandardClaims
+}
+
 func Home(c echo.Context) error {
 	return c.String(http.StatusOK, "Hello World")
 }
@@ -95,5 +99,46 @@ func Login(c echo.Context) error {
 
 	return c.JSON(http.StatusOK, echo.Map{
 		"jwt": token,
+	})
+}
+
+func User(c echo.Context) error {
+	// Loginで保存したJWTをCookieから取得する
+	cookie, err := c.Cookie("jwt")
+	if err != nil {
+		return err
+	}
+	// token取得
+	token, err := jwt.ParseWithClaims(cookie.Value, &Claims{}, func(token *jwt.Token) (interface{}, error) {
+		return []byte("secret"), nil
+	})
+	if err != nil || !token.Valid {
+		// 401エラー
+		return c.JSON(http.StatusUnauthorized, echo.Map{
+			"message": "パスワードが間違っています",
+		})
+	}
+
+	claims := token.Claims.(*Claims)
+	// userIDを取得
+	id := claims.Issuer
+
+	var user model.User
+	database.DB.Where("id = ?", id).First(&user)
+
+	return c.JSON(http.StatusOK, user)
+}
+
+func Logout(c echo.Context) error {
+	// Cookie
+	cookie := new(http.Cookie)
+	cookie.Name = "jwt"
+	cookie.Value = ""
+	cookie.Expires = time.Now().Add(-time.Hour) //マイナスにすると期限切れ扱い
+	cookie.HttpOnly = true
+	c.SetCookie(cookie)
+
+	return c.JSON(http.StatusOK, echo.Map{
+		"message": "ログアウト成功",
 	})
 }
