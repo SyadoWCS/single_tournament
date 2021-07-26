@@ -5,9 +5,9 @@ import (
 	"github.com/labstack/echo/v4"
 )
 
-func Setup(app *echo.Echo) {
-	app.GET("/", controller.Home)
-	app.GET("/other", controller.Other)
-	app.POST("/api/register", controller.Register)
-	app.POST("/api/login", controller.Login)
+func Setup(e *echo.Echo) {
+	e.GET("/", controller.Home)
+	e.GET("/other", controller.Other)
+	e.POST("/api/register", controller.Register)
+	e.POST("/api/login", controller.Login)
 }
