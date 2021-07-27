@@ -1,4 +1,4 @@
-import { createStore } from "vuex";
+import { Commit, createStore } from 'vuex'
 
 export default createStore({
   state: {
@@ -12,5 +12,5 @@ export default createStore({
     setAuth: ({commit}: { commit: Commit }, auth: boolean) => commit('setAuth', auth)
   },
   modules: {
-  },
-});
+  }
+})
