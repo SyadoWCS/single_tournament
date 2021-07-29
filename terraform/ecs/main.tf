@@ -69,3 +69,18 @@ resource "aws_ecs_service" "single-tournament-frontend-service" {
         account_id  = var.account_id
     }
 }*/
+// サービス作成(バックエンド)
+/*resource "aws_ecs_service" "single-tournament-backend-service" {
+    name                              = "single-tournament-backend-from-ecs-service"
+    cluster                           = aws_ecs_cluster.single-tournament-ecs-cluster.arn
+    task_definition                   = aws_ecs_task_definition.single-tournament-backend-task-definition.arn
+    desired_count                     = 1
+    launch_type                       = "FARGATE"
+    platform_version                  = "1.4.0"
+    health_check_grace_period_seconds = 100
+    deployment_maximum_percent = 200
+
+    tags = {
+        "Name" = "single-tournament-backend-from-ecs-task"
+    }
+}*/
