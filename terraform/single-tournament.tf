@@ -13,7 +13,7 @@ terraform {
   }
 }
 
-/*module "ecr" {
+module "ecr" {
   source   = "./ecr"
   account_id = var.aws_account_id
   front_repository_name = var.aws_ecr_front_repository_name
@@ -22,12 +22,8 @@ terraform {
   back_repository_name = var.aws_ecr_back_repository_name
   back_image_name = var.aws_ecr_back_image_name
   back_repository_uri = var.aws_ecr_back_repository_uri
-}*/
-
-/*module "ecs-fargate-frontend" {
-  source   = "./frontend"
-}*/
-
-module "ecs-fargate-backend" {
-  source   = "./backend"
+}
+module "ecs" {
+  source   = "./ecs"
+  account_id = var.aws_account_id
 }

@@ -28,23 +28,23 @@ resource "null_resource" "single-tournament-image-push" {
         command = "docker-compose build frontend"
     }
 
-    provisioner "local-exec" {
+    /*provisioner "local-exec" {
         command = "docker-compose build backend"
-    }
+    }*/
 
     provisioner "local-exec" {
         command = "docker tag ${var.front_image_name}:latest ${aws_ecr_repository.single-tournament-frontend.repository_url}"
     }
 
-    provisioner "local-exec" {
+    /*provisioner "local-exec" {
         command = "docker tag ${var.back_image_name}:latest ${aws_ecr_repository.single-tournament-backend.repository_url}"
-    }
+    }*/
 
     provisioner "local-exec" {
         command = "docker push ${aws_ecr_repository.single-tournament-frontend.repository_url}"
     }
 
-    provisioner "local-exec" {
+    /*provisioner "local-exec" {
         command = "docker push ${aws_ecr_repository.single-tournament-backend.repository_url}"
-    }
+    }*/
 }
