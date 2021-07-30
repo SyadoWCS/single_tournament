@@ -7,31 +7,31 @@ provider "aws" {
 terraform {
   required_providers {
     aws = {
-      source = "hashicorp/aws"
+      source  = "hashicorp/aws"
       version = "3.49.0"
     }
   }
 }
 
 module "ecr" {
-  source   = "./ecr"
-  account_id = var.aws_account_id
+  source                = "./ecr"
+  account_id            = var.aws_account_id
   front_repository_name = var.aws_ecr_front_repository_name
-  front_image_name = var.aws_ecr_front_image_name
-  front_repository_uri = var.aws_ecr_front_repository_uri
-  back_repository_name = var.aws_ecr_back_repository_name
-  back_image_name = var.aws_ecr_back_image_name
-  back_repository_uri = var.aws_ecr_back_repository_uri
+  front_image_name      = var.aws_ecr_front_image_name
+  front_repository_uri  = var.aws_ecr_front_repository_uri
+  back_repository_name  = var.aws_ecr_back_repository_name
+  back_image_name       = var.aws_ecr_back_image_name
+  back_repository_uri   = var.aws_ecr_back_repository_uri
 }
 module "ecs" {
-  source   = "./ecs"
-  account_id = var.aws_account_id
-  db_user = var.aws_db_user
-  db_password = var.aws_db_password
-  db_endpoint = var.aws_db_endpoint
-  db_database = var.aws_db_database
-  vpc_subnet_1a = var.aws_vpc_subnet_1a
-  vpc_subnet_1c = var.aws_vpc_subnet_1c
+  source                   = "./ecs"
+  account_id               = var.aws_account_id
+  db_user                  = var.aws_db_user
+  db_password              = var.aws_db_password
+  db_endpoint              = var.aws_db_endpoint
+  db_database              = var.aws_db_database
+  vpc_subnet_1a            = var.aws_vpc_subnet_1a
+  vpc_subnet_1c            = var.aws_vpc_subnet_1c
   ecs_front_security_group = var.aws_ecs_front_security_group
-  ecs_back_security_group = aws_ecs_back_security_group
+  ecs_back_security_group  = var.aws_ecs_back_security_group
 }
