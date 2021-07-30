@@ -26,4 +26,12 @@ module "ecr" {
 module "ecs" {
   source   = "./ecs"
   account_id = var.aws_account_id
+  db_user = var.aws_db_user
+  db_password = var.aws_db_password
+  db_endpoint = var.aws_db_endpoint
+  db_database = var.aws_db_database
+  vpc_subnet_1a = var.aws_vpc_subnet_1a
+  vpc_subnet_1c = var.aws_vpc_subnet_1c
+  ecs_front_security_group = var.aws_ecs_front_security_group
+  ecs_back_security_group = aws_ecs_back_security_group
 }

@@ -13,19 +13,19 @@
       "environment" : [
          {
             "name": "MYSQL_USER",
-            "valueFrom": "MYSQL_USER"
+            "valueFrom": "${db_user}"
          },
          {
             "name": "MYSQL_PASSWORD",
-            "valueFrom": "MYSQL_PASSWORD"
+            "valueFrom": "${db_password}"
          },
          {
             "name": "MYSQL_ENDPOINT",
-            "valueFrom": "MYSQL_ENDPOINT"
+            "valueFrom": "${db_endpoint}"
          },
          {
             "name": "MYSQL_DATABASE",
-            "valueFrom": "MYSQL_DATABASE"
+            "valueFrom": "${db_database}"
          }
       ]
    }
