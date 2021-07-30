@@ -12,7 +12,7 @@ import {useStore} from 'vuex'
 export default {
    name: "Home",
    setup() {
-      const message = ref('ログイン状態です！')
+      const message = ref('ホーム画面')
       const store = useStore()
 
       onMounted(async () => {
