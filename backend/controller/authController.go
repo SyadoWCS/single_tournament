@@ -106,7 +106,10 @@ func User(c echo.Context) error {
 	// Loginで保存したJWTをCookieから取得する
 	cookie, err := c.Cookie("jwt")
 	if err != nil {
-		return err
+		// 401エラー
+		return c.JSON(http.StatusUnauthorized, echo.Map{
+			"message": "認証されていません",
+		})
 	}
 	// token取得
 	token, err := jwt.ParseWithClaims(cookie.Value, &Claims{}, func(token *jwt.Token) (interface{}, error) {
@@ -115,7 +118,7 @@ func User(c echo.Context) error {
 	if err != nil || !token.Valid {
 		// 401エラー
 		return c.JSON(http.StatusUnauthorized, echo.Map{
-			"message": "パスワードが間違っています",
+			"message": "認証されていません",
 		})
 	}
 
