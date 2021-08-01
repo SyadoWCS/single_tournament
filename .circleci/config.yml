@@ -19,9 +19,9 @@ jobs:
     working_directory: /go/src/github.com/SyadoWCS/single_tournament
     steps:
       - checkout
-      -run:
+      - run:
         working_directory: terraform
-          command: ls
+        command: ls
 
 workflows:
   version: 2.1
