@@ -4,15 +4,16 @@ jobs:
   test:
     docker:
       - image: circleci/golang:1.15.8
-    working_directory: /go/src/github.com/SyadoWCS/single_tournament/backend
+    working_directory: /go/src/github.com/SyadoWCS/single_tournament
     environment:
-      GOPATH: /
       GO111MODULE: "on"
     steps:
       - checkout
       - run: go version
       - run: ls
-      - run: go run main.go
+      - run:
+          working_directory: backend
+          command: ls
       - run: go test -v ./...
   build:
     docker:
