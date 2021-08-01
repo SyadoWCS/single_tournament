@@ -10,9 +10,7 @@ jobs:
     steps:
       - checkout
       - run: go version
-      - run:
-        working_directory: backend
-        command: go test -v ./...
+      - run: ls
 
 workflows:
   version: 2.1
