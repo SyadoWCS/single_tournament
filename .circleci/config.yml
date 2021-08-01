@@ -9,8 +9,6 @@ jobs:
       GO111MODULE: "on"
     steps:
       - checkout
-      - run: go version
-      - run: ls
       - run:
           working_directory: backend
           command: go test -v ./...
