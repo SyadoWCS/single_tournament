@@ -9,24 +9,23 @@ jobs:
       GO111MODULE: "on"
     steps:
       - checkout
-      - run: go version
-      - run: ls
       - run:
-          working_directory: backend
-          command: go test -v ./...
-  build:
+        working_directory: backend
+        command: go test -v ./...
+
+  deploy :
     docker:
-      - image: circleci/golang:1.15.8
+      - image: hashicorp/terraform:1.0.3
     working_directory: /go/src/github.com/SyadoWCS/single_tournament
     steps:
       - checkout
-      - run: cd backend
-      - run: go get -v -t -d ./...
-      - run: go build
+      -run:
+        working_directory: terraform
+          command: ls
 
 workflows:
   version: 2.1
-  test and build:
+  test and deploy:
     jobs:
       - test
-      - build
+      - deploy
