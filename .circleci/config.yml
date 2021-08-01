@@ -8,6 +8,7 @@ jobs:
     steps:
       - checkout
       - run: go version
+      - run: ls
       - run: cd backend
       - run: go get -v -t -d ./...
       - run: go test -v ./...
