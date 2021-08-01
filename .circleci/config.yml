@@ -11,6 +11,9 @@ jobs:
       - checkout
       - run: go version
       - run: ls
+      - run:
+        working_directory: backend
+        command: go test -v ./...
 
 workflows:
   version: 2.1
