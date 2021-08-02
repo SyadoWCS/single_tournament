@@ -29,10 +29,6 @@ func main() {
 
 	server.Setup(e)
 
-	// テストコード用
-	s := hello.GetHello("山澤さん")
-	fmt.Println(s)
-
 	// サーバー起動
 	e.Start(":80")
 }
