@@ -7,9 +7,11 @@ import (
 
 func Setup(e *echo.Echo) {
 	e.GET("/", controller.Home)
-	e.GET("/other", controller.Other)
 	e.POST("/api/register", controller.Register)
 	e.POST("/api/login", controller.Login)
 	e.GET("/api/user", controller.User)
 	e.GET("/api/logout", controller.Logout)
+	e.GET("/api/tournament/list", controller.TournamentList)
+	e.POST("/api/tournament/create", controller.TournamentCreate)
+	e.POST("/api/tournament/delete/:id", controller.TournamentDelete)
 }
