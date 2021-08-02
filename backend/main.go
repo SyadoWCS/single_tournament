@@ -4,7 +4,6 @@ import (
 	"net/http"
 
 	"github.com/SyadoWCS/single_tournament/database"
-	"github.com/SyadoWCS/single_tournament/hello"
 	"github.com/SyadoWCS/single_tournament/server"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
