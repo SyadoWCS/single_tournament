@@ -7,3 +7,5 @@ variable "vpc_subnet_1a" {}
 variable "vpc_subnet_1c" {}
 variable "ecs_front_security_group" {}
 variable "ecs_back_security_group" {}
+variable "ecs_front_target_group" {}
+variable "ecs_back_target_group" {}

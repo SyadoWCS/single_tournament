@@ -54,7 +54,7 @@ resource "aws_ecs_service" "single-tournament-frontend-service" {
   }
 
   load_balancer {
-    target_group_arn = aws_lb_target_group.single-tournament-front-ecs-tg.arn
+    target_group_arn = var.ecs_front_target_group
     container_name   = "single-tournament-frontend-container"
     container_port   = 8080
   }
@@ -115,7 +115,7 @@ resource "aws_ecs_service" "single-tournament-backend-service" {
   }
 
   load_balancer {
-    target_group_arn = aws_lb_target_group.single-tournament-back-ecs-tg.arn
+    target_group_arn = var.ecs_back_target_group
     container_name   = "single-tournament-backend-container"
     container_port   = 80
   }
