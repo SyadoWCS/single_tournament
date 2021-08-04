@@ -22,3 +22,4 @@ variable "aws_ecs_front_security_group" {}
 variable "aws_ecs_back_security_group" {}
 variable "aws_alb_front_security_group" {}
 variable "aws_alb_back_security_group" {}
+variable "aws_acm_cert" {}

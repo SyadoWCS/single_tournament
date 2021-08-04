@@ -20,6 +20,7 @@ module "alb" {
   vpc_subnet_1c            = var.aws_vpc_subnet_1c
   alb_front_security_group = var.aws_alb_front_security_group
   alb_back_security_group  = var.aws_alb_back_security_group
+  acm_cert                 = var.aws_acm_cert
 }
 module "ecr" {
   source                = "./ecr"
