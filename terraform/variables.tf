@@ -12,7 +12,10 @@ variable "aws_db_user" {}
 variable "aws_db_password" {}
 variable "aws_db_endpoint" {}
 variable "aws_db_database" {}
+variable "aws_vpc_network" {}
 variable "aws_vpc_subnet_1a" {}
 variable "aws_vpc_subnet_1c" {}
 variable "aws_ecs_front_security_group" {}
 variable "aws_ecs_back_security_group" {}
+variable "aws_alb_front_security_group" {}
+variable "aws_alb_back_security_group" {}
