@@ -39,8 +39,8 @@ resource "aws_ecs_service" "single-tournament-frontend-service" {
   desired_count                     = 1
   launch_type                       = "FARGATE"
   platform_version                  = "1.4.0"
-  //health_check_grace_period_seconds = 100
-  //deployment_maximum_percent        = 200
+  health_check_grace_period_seconds = 100
+  deployment_maximum_percent        = 200
 
   network_configuration {
     assign_public_ip = true
@@ -53,11 +53,11 @@ resource "aws_ecs_service" "single-tournament-frontend-service" {
     ]
   }
 
-  /*load_balancer {
-    target_group_arn = aws_lb_target_group.single-tournament-front-ecs-tg.arn
+  load_balancer {
+    target_group_arn = var.ecs_front_target_group
     container_name   = "single-tournament-frontend-container"
     container_port   = 8080
-  }*/
+  }
 
   tags = {
     "Name" = "single-tournament-frontend-from-ecs-task"
@@ -100,8 +100,8 @@ resource "aws_ecs_service" "single-tournament-backend-service" {
   desired_count                     = 1
   launch_type                       = "FARGATE"
   platform_version                  = "1.4.0"
-  //health_check_grace_period_seconds = 100
-  //deployment_maximum_percent        = 200
+  health_check_grace_period_seconds = 100
+  deployment_maximum_percent        = 200
 
   network_configuration {
     assign_public_ip = true
@@ -114,11 +114,11 @@ resource "aws_ecs_service" "single-tournament-backend-service" {
     ]
   }
 
-  /*load_balancer {
-    target_group_arn = aws_lb_target_group.single-tournament-back-ecs-tg.arn
+  load_balancer {
+    target_group_arn = var.ecs_back_target_group
     container_name   = "single-tournament-backend-container"
     container_port   = 80
-  }*/
+  }
 
   tags = {
     "Name" = "single-tournament-backend-from-ecs-task"

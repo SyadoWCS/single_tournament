@@ -13,6 +13,15 @@ terraform {
   }
 }
 
+module "alb" {
+  source                   = "./alb"
+  vpc_network              = var.aws_vpc_network
+  vpc_subnet_1a            = var.aws_vpc_subnet_1a
+  vpc_subnet_1c            = var.aws_vpc_subnet_1c
+  alb_front_security_group = var.aws_alb_front_security_group
+  alb_back_security_group  = var.aws_alb_back_security_group
+  acm_cert                 = var.aws_acm_cert
+}
 module "ecr" {
   source                = "./ecr"
   account_id            = var.aws_account_id
@@ -34,4 +43,16 @@ module "ecs" {
   vpc_subnet_1c            = var.aws_vpc_subnet_1c
   ecs_front_security_group = var.aws_ecs_front_security_group
   ecs_back_security_group  = var.aws_ecs_back_security_group
+  ecs_front_target_group   = module.alb.alb-frontend-ecs-tg
+  ecs_back_target_group    = module.alb.alb-backend-ecs-tg
+}
+module "route53" {
+  source             = "./route53"
+  zone_id            = var.aws_zone_id
+  front_domain_name  = var.aws_front_domain_name
+  alb_front_dns_name = module.alb.alb-frontend-dns-name
+  alb_front_zone_id  = module.alb.alb-frontend-zone-id
+  back_domain_name   = var.aws_back_domain_name
+  alb_back_dns_name  = module.alb.alb-backend-dns-name
+  alb_back_zone_id   = module.alb.alb-backend-zone-id
 }
