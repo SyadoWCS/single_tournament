@@ -12,18 +12,9 @@ jobs:
       - run:
           working_directory: backend
           command: go test -v ./...
-  deploy :
-    docker:
-      - image: hashicorp/terraform:1.0.3
-    working_directory: /go/src/github.com/SyadoWCS/single_tournament
-    steps:
-      - checkout
-      - run:
-          working_directory: terraform
-          command: ls
+
 workflows:
   version: 2.1
-  test and deploy:
+  test:
     jobs:
       - test
-      - deploy
