@@ -12,6 +12,9 @@ func Setup(e *echo.Echo) {
 	e.GET("/api/user", controller.User)
 	e.GET("/api/logout", controller.Logout)
 	e.GET("/api/tournament/list", controller.TournamentList)
+	e.GET("/api/tournament/new", controller.TournamentNew)
 	e.POST("/api/tournament/create", controller.TournamentCreate)
-	e.POST("/api/tournament/delete/:id", controller.TournamentDelete)
+	e.GET("/api/tournament/edit/:id", controller.TournamentEdit)
+	e.POST("/api/tournament/update/:id", controller.TournamentUpdate)
+	e.GET("/api/tournament/delete/:id", controller.TournamentDelete)
 }
