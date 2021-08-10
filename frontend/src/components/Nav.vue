@@ -1,12 +1,12 @@
 <template>
    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-      <ul class="navbar-nav mr-auto">
+      <ul class="navbar-nav me-auto my-2 my-lg-0">
          <li class="nav-item">
             <router-link to="/" class="nav-link">Home</router-link>
          </li>
       </ul>
 
-      <ul class="navbar-nav my-2 my-lg-0">
+      <ul class="navbar-nav">
          <!-- ログイン済みなら表示 -->
          <template v-if="auth">
             <li class="nav-item">
