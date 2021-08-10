@@ -1,5 +1,5 @@
 <template>
-   <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+   <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
       <ul class="navbar-nav mr-auto">
          <li class="nav-item">
             <router-link to="/" class="nav-link">Home</router-link>
@@ -44,7 +44,8 @@ export default {
          await router.push('/login')
       }
       return {
-         auth
+         auth,
+         logout
       }
    }
 }
