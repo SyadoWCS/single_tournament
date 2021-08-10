@@ -1,0 +1,15 @@
+{{define "tournament_new"}}
+  <form method="post" action="/api/tournament/create">
+    <p>新規で大会を作成</p>
+    <label>
+      大会名
+      <input type="text" name="Name" value="{{.Name}}"/>
+    </label>
+    <label>
+      参加人数
+      <input type="text" name="People" value="{{.People}}"/>
+    </label>
+    <input type="submit" name="Submit" value="登録"/><br/>
+  </form>
+  <a href="/api/tournament/list">大会一覧に戻る</a>
+{{end}}
