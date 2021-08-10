@@ -22,7 +22,7 @@ export default {
             // リクエストするだけでOK
             const { data } = await axios.get('user')
             console.log(data)
-            message.value = `Hi ${data.FirstName} ${data.LastName}`
+            message.value = `Hi ${data.first_name} ${data.last_name}`
             // actionsに設定したパラメータ名を設定
             await store.dispatch('setAuth', true)
          } catch(e) {

@@ -38,17 +38,14 @@ func TournamentNew(c echo.Context) error {
 
 func TournamentCreate(c echo.Context) error {
 	name := c.FormValue("Name")
-
-	var participate_number int
-	participate_number, err := strconv.Atoi(c.FormValue("ParticipateNumber"))
+	people, err := strconv.Atoi(c.FormValue("People"))
 	if err != nil {
 		return c.String(http.StatusBadRequest, "大会を作成できませんでした")
 	}
 
 	tournament := model.Tournament{
-		Name:              name,
-		ParticipateNumber: participate_number,
-		Status:            1,
+		Name:   name,
+		People: people,
 	}
 	// データ登録
 	database.DB.Create(&tournament)
@@ -74,17 +71,15 @@ func TournamentUpdate(c echo.Context) error {
 	if err != nil {
 		return c.String(http.StatusBadRequest, "大会IDが見つかりませんでした")
 	}
-
 	name := c.FormValue("Name")
-	participate_number, err := strconv.Atoi(c.FormValue("ParticipateNumber"))
+	people, err := strconv.Atoi(c.FormValue("People"))
 	if err != nil {
 		return c.String(http.StatusBadRequest, "参加人数が不正な値です")
 	}
 
 	tournament := model.Tournament{
-		Name:              name,
-		ParticipateNumber: participate_number,
-		Status:            1,
+		Name:   name,
+		People: people,
 	}
 
 	database.DB.Model(model.Tournament{}).Where("id = ?", id).Updates(&tournament)
