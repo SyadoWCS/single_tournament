@@ -1,0 +1,8 @@
+{{define "tournament_list"}}
+   <p>作成された大会一覧</p>
+   {{range .}}
+      <a href="/api/tournament/edit/{{.Id}}">{{.Name}}</a><br/>
+   {{end}}
+   <p>大会新規作成</p>
+   <a href="/api/tournament/new">大会を作成する</a>
+{{end}}
