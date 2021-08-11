@@ -1,7 +1,6 @@
 package controller
 
 import (
-	"fmt"
 	"net/http"
 	"net/http/httptest"
 	"strings"
@@ -11,7 +10,8 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-var userJSON = `{"first_name": "test", "last_name": "user", "email": "testuser@yahoo.co.jp", "password": "password", "password_confirm": "password"}`
+var userRegisterJSON = `{"first_name": "test", "last_name": "user", "email": "testuser@example.com", "password": "password", "password_confirm": "password"}`
+var userLoginJSON = `{"email": "testuser@example.com", "password": "password"}`
 
 func TestHome(t *testing.T) {
 	e := echo.New()
@@ -22,8 +22,6 @@ func TestHome(t *testing.T) {
 	c := e.NewContext(req, rec)
 	Home(c)
 
-	fmt.Println(rec)
-
 	assert.Equal(t, http.StatusOK, rec.Code)
 	assert.Equal(t, "Hello World", rec.Body.String())
 }
@@ -31,7 +29,7 @@ func TestHome(t *testing.T) {
 func TestRegister(t *testing.T) {
 	e := echo.New()
 
-	req := httptest.NewRequest(http.MethodPost, "/api/register", strings.NewReader(userJSON))
+	req := httptest.NewRequest(http.MethodPost, "/api/register", strings.NewReader(userRegisterJSON))
 	rec := httptest.NewRecorder()
 
 	c := e.NewContext(req, rec)
@@ -40,14 +38,40 @@ func TestRegister(t *testing.T) {
 	assert.Equal(t, http.StatusOK, rec.Code)
 }
 
-/*func TestLogin(t *testing.T) {
+func TestLogin(t *testing.T) {
+	e := echo.New()
 
-}*/
+	req := httptest.NewRequest(http.MethodPost, "/api/login", strings.NewReader(userLoginJSON))
+	rec := httptest.NewRecorder()
 
-/*func TestUser(t *testing.T) {
+	c := e.NewContext(req, rec)
+	Login(c)
 
-}*/
+	assert.Equal(t, http.StatusOK, rec.Code)
+}
 
-/*func TestLogout(t *testing.T) {
+func TestUser(t *testing.T) {
+	e := echo.New()
 
-}*/
+	req := httptest.NewRequest(http.MethodGet, "/api/user", nil)
+	rec := httptest.NewRecorder()
+
+	c := e.NewContext(req, rec)
+	User(c)
+
+	assert.Equal(t, http.StatusUnauthorized, rec.Code)
+	assert.JSONEq(t, `{"message":"認証されていません"}`, rec.Body.String())
+}
+
+func TestLogout(t *testing.T) {
+	e := echo.New()
+
+	req := httptest.NewRequest(http.MethodGet, "/api/logout", nil)
+	rec := httptest.NewRecorder()
+
+	c := e.NewContext(req, rec)
+	Logout(c)
+
+	assert.Equal(t, http.StatusOK, rec.Code)
+	assert.JSONEq(t, `{"message":"ログアウト成功"}`, rec.Body.String())
+}
