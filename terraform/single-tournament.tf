@@ -35,6 +35,7 @@ module "ecr" {
 module "ecs" {
   source                   = "./ecs"
   account_id               = var.aws_account_id
+  environment              = var.aws_environment
   db_user                  = var.aws_db_user
   db_password              = var.aws_db_password
   db_endpoint              = var.aws_db_endpoint
