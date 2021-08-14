@@ -10,6 +10,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
+// JSONテストデータ
 var userRegisterJSON = `{"first_name": "test", "last_name": "user", "email": "testuser@example.com", "password": "password", "password_confirm": "password"}`
 var userLoginJSON = `{"email": "testuser@example.com", "password": "password"}`
 
