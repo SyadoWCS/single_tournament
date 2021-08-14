@@ -1,4 +1,5 @@
 variable "account_id" {}
+variable "environment" {}
 variable "db_user" {}
 variable "db_password" {}
 variable "db_endpoint" {}

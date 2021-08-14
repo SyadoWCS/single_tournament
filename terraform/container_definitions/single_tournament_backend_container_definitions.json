@@ -10,22 +10,22 @@
             "hostPort" : 80
          }
       ],
-      "environment": [
+      "environment" : [
          {
-            "name": "MYSQL_USER",
-            "value": "${db_user}"
+            "name" : "MYSQL_USER",
+            "value" : "${db_user}"
          },
          {
-            "name": "MYSQL_PASSWORD",
-            "value": "${db_password}"
+            "name" : "MYSQL_PASSWORD",
+            "value" : "${db_password}"
          },
          {
-            "name": "MYSQL_ENDPOINT",
-            "value": "${db_endpoint}"
+            "name" : "MYSQL_ENDPOINT",
+            "value" : "${db_endpoint}"
          },
          {
-            "name": "MYSQL_DATABASE",
-            "value": "${db_database}"
+            "name" : "MYSQL_DATABASE",
+            "value" : "${db_database}"
          }
       ]
    }

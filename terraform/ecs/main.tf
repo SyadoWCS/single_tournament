@@ -27,7 +27,8 @@ data "template_file" "container_definitions_frontend" {
   template = file("container_definitions/single_tournament_frontend_container_definitions.json")
 
   vars = {
-    account_id = var.account_id
+    account_id = var.account_id,
+    environment = var.environment,
   }
 }
 
