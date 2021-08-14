@@ -1,3 +1,4 @@
+
 variable "account_id" {}
 variable "front_repository_name" {}
 variable "front_image_name" {}
