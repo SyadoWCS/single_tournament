@@ -1,5 +1,4 @@
 # ECR create repository(frontend)
-
 resource "aws_ecr_repository" "single-tournament-frontend" {
   name                 = var.front_repository_name
   image_tag_mutability = "MUTABLE"
