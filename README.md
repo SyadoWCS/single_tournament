@@ -2,27 +2,11 @@
 
 シングルエリミネーショントーナメント
 
-# 使用技術
-- インフラ
-  - AWS(EC2,RDS,VPC,Route53,ACM,ECR,ECS,Fargate) ※EC2はALB,SG,TGのために使用
-  - Terraform(ALB,Route53,ECR,ECS,Fargate) ※本番環境に変更分反映のために必要なものだけ作成
-- 開発環境
-  - Docker
-  - CircleCI ※テスト自動化まで
-- フロントエンド
-  - HTML/CSS
-  - JavaScript
-  - Vue.js(TypeScript)
-  - Bootstrap
-  - ESLint
-- バックエンド
-  - Golang
-  - Echo
+基本機能はこちら
+https://syadowcs-tournament.com
 
-# インフラ構成図
-![スクリーンショット 2021-08-15 16 19 31](https://user-images.githubusercontent.com/8272683/129470462-4dcdb8da-9a64-433e-bc44-a7419a443ed9.png)
-
-# ER図
+※サービス機能はこちら(APIのみ実装)
+https://backend.syadowcs-tournament.com
 
 # 機能一覧
 - 基本機能
@@ -33,3 +17,46 @@
   - 大会作成機能
   - 大会更新機能
   - 大会削除機能
+
+# 使用技術
+- フロントエンド
+  - HTML/CSS
+  - JavaScript
+  - Vue.js(TypeScript)
+  - Bootstrap
+  - ESLint
+- バックエンド
+  - Golang
+  - Echo
+- 開発環境
+  - Docker
+  - CircleCI ※テスト自動化まで
+- インフラ
+  - AWS(EC2,RDS,VPC,Route53,ACM,ECR,ECS,Fargate) ※EC2はALB,SG,TGのために使用
+  - Terraform(ALB,Route53,ECR,ECS,Fargate) ※本番環境に変更分反映のために必要なものだけ作成
+
+# インフラ構成図
+![スクリーンショット 2021-08-15 16 19 31](https://user-images.githubusercontent.com/8272683/129470462-4dcdb8da-9a64-433e-bc44-a7419a443ed9.png)
+
+# ER図
+
+# 動作方法
+
+開発環境動作URL
+フロントエンド:http:localhost:8080
+バックエンド:http://localhost:80
+
+環境変数の設定
+```
+.envrcに以下の内容の情報を記載
+export NODE_ENV=development
+export MYSQL_USER=xxxxx
+export MYSQL_PASSWORD=xxxxx
+export MYSQL_ENDPOINT=xxxxx
+export MYSQL_DATABASE=xxxxx
+```
+Dockerコンテナビルド&起動
+```
+docker-compose build
+docker-compose up -d
+```
