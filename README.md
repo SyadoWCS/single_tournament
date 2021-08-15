@@ -5,8 +5,17 @@
 基本機能はこちら
 https://syadowcs-tournament.com
 
+![スクリーンショット 2021-08-15 22 55 10](https://user-images.githubusercontent.com/8272683/129480913-47d6ae2a-d6a7-4a31-93ba-b705049e7a31.png)
+![スクリーンショット 2021-08-15 22 55 20](https://user-images.githubusercontent.com/8272683/129480925-690b7015-a59f-4b6e-82f5-af0443b5d0a0.png)
+![スクリーンショット 2021-08-15 22 55 29](https://user-images.githubusercontent.com/8272683/129481010-9ef79d04-f779-4e64-bb63-bbe079623941.png)
+![スクリーンショット 2021-08-15 22 56 10](https://user-images.githubusercontent.com/8272683/129481018-3c28df49-5dac-4e1d-a565-7d44e71c2576.png)
+
 ※サービス機能はこちら(APIのみ実装)
 https://backend.syadowcs-tournament.com
+
+![スクリーンショット 2021-08-15 23 02 59](https://user-images.githubusercontent.com/8272683/129481118-df8c3235-abcc-4fe8-b97f-502933b9b2df.png)
+![スクリーンショット 2021-08-15 23 03 15](https://user-images.githubusercontent.com/8272683/129481138-003d3a8f-3831-4731-bcf0-ac1e55c5cfbf.png)
+![スクリーンショット 2021-08-15 23 03 34](https://user-images.githubusercontent.com/8272683/129481328-5a55a209-d779-44b1-84f2-5b35a851ce63.png)
 
 # 機能一覧
 - 基本機能
@@ -43,7 +52,7 @@ https://backend.syadowcs-tournament.com
 # 動作方法
 
 - 開発環境動作URL
-  - フロントエンド:http:localhost:8080
+  - フロントエンド:http://localhost:8080
   - バックエンド:http://localhost:80
 
 環境変数の設定
