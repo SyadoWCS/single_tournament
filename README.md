@@ -42,13 +42,13 @@ https://backend.syadowcs-tournament.com
 
 # 動作方法
 
-開発環境動作URL
-フロントエンド:http:localhost:8080
-バックエンド:http://localhost:80
+- 開発環境動作URL
+  - フロントエンド:http:localhost:8080
+  - バックエンド:http://localhost:80
 
 環境変数の設定
-```
 .envrcに以下の内容の情報を記載
+```
 export NODE_ENV=development
 export MYSQL_USER=xxxxx
 export MYSQL_PASSWORD=xxxxx
