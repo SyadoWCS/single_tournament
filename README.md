@@ -40,11 +40,6 @@ https://backend.syadowcs-tournament.com
   - AWS(EC2,RDS,VPC,Route53,ACM,ECR,ECS,Fargate) ※EC2はALB,SG,TGのために使用
   - Terraform(ALB,Route53,ECR,ECS,Fargate) ※本番環境に変更分反映のために必要なものだけ作成
 
-# インフラ構成図
-![スクリーンショット 2021-08-15 16 19 31](https://user-images.githubusercontent.com/8272683/129470462-4dcdb8da-9a64-433e-bc44-a7419a443ed9.png)
-
-# ER図
-
 # 動作方法
 
 - 開発環境動作URL
@@ -65,3 +60,8 @@ Dockerコンテナビルド&起動
 docker-compose build
 docker-compose up -d
 ```
+
+# インフラ構成図
+![スクリーンショット 2021-08-15 16 19 31](https://user-images.githubusercontent.com/8272683/129470462-4dcdb8da-9a64-433e-bc44-a7419a443ed9.png)
+
+# ER図
