@@ -1,4 +1,15 @@
-# single_tournament
+# SyadoWCSトーナメント
 
-インフラ構成図
-![スクリーンショット 2021-08-15 3 32 53](https://user-images.githubusercontent.com/8272683/129456972-d3190045-61ce-4691-b7f2-9c00fd6db9f2.png)
+# 使用技術
+- インフラ
+AWS(EC2,RDS,VPC,Route53,ACM,ECR,ECS,Fargate)
+※EC2はALB,SG,TGのために使用
+Terraform(ALB,Route53,ECR,ECS,Fargate)
+- フロントエンド
+- - Vue.js + TypeScript
+- バックエンド
+
+# インフラ構成図
+![スクリーンショット 2021-08-15 16 19 31](https://user-images.githubusercontent.com/8272683/129470462-4dcdb8da-9a64-433e-bc44-a7419a443ed9.png)
+
+# ER図
