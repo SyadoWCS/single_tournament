@@ -5,17 +5,17 @@
 基本機能はこちら
 https://syadowcs-tournament.com
 
-![スクリーンショット 2021-08-15 22 55 10](https://user-images.githubusercontent.com/8272683/129480913-47d6ae2a-d6a7-4a31-93ba-b705049e7a31.png)
-![スクリーンショット 2021-08-15 22 55 20](https://user-images.githubusercontent.com/8272683/129480925-690b7015-a59f-4b6e-82f5-af0443b5d0a0.png)
-![スクリーンショット 2021-08-15 22 55 29](https://user-images.githubusercontent.com/8272683/129481010-9ef79d04-f779-4e64-bb63-bbe079623941.png)
-![スクリーンショット 2021-08-15 22 56 10](https://user-images.githubusercontent.com/8272683/129481018-3c28df49-5dac-4e1d-a565-7d44e71c2576.png)
+![home](https://user-images.githubusercontent.com/8272683/129481464-a7c1ab38-aa16-469c-b08d-13d3aaece422.png)
+![register](https://user-images.githubusercontent.com/8272683/129481466-70b8f803-bc38-4d4b-a27e-c404c9b78120.png)
+![login](https://user-images.githubusercontent.com/8272683/129481470-03723d7b-32fe-4a69-a4fc-aff161fb0d0a.png)
+![after_login](https://user-images.githubusercontent.com/8272683/129481472-3bd6bcc5-3c68-4db6-9672-da9d30614c60.png)
 
 ※サービス機能はこちら(APIのみ実装)
 https://backend.syadowcs-tournament.com
 
-![スクリーンショット 2021-08-15 23 02 59](https://user-images.githubusercontent.com/8272683/129481118-df8c3235-abcc-4fe8-b97f-502933b9b2df.png)
-![スクリーンショット 2021-08-15 23 03 15](https://user-images.githubusercontent.com/8272683/129481138-003d3a8f-3831-4731-bcf0-ac1e55c5cfbf.png)
-![スクリーンショット 2021-08-15 23 03 34](https://user-images.githubusercontent.com/8272683/129481328-5a55a209-d779-44b1-84f2-5b35a851ce63.png)
+![tournament_list](https://user-images.githubusercontent.com/8272683/129481515-fdd439b1-d83e-40cc-ac15-d96d0d0a38bb.png)
+![tournament_create](https://user-images.githubusercontent.com/8272683/129481519-58c7dd61-afba-42c5-8346-8b50b6a89b3e.png)
+![tournament_update](https://user-images.githubusercontent.com/8272683/129481521-bae2e2c7-6b7a-4489-9429-58113d479572.png)
 
 # 機能一覧
 - 基本機能
