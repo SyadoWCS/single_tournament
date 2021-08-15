@@ -5,15 +5,13 @@
 基本機能はこちら
 https://syadowcs-tournament.com
 
-![home](https://user-images.githubusercontent.com/8272683/129481464-a7c1ab38-aa16-469c-b08d-13d3aaece422.png)![register](https://user-images.githubusercontent.com/8272683/129481466-70b8f803-bc38-4d4b-a27e-c404c9b78120.png)
-![login](https://user-images.githubusercontent.com/8272683/129481470-03723d7b-32fe-4a69-a4fc-aff161fb0d0a.png)![after_login](https://user-images.githubusercontent.com/8272683/129481472-3bd6bcc5-3c68-4db6-9672-da9d30614c60.png)
+![home](https://user-images.githubusercontent.com/8272683/129481464-a7c1ab38-aa16-469c-b08d-13d3aaece422.png)
 
 ※サービス機能はこちら(APIのみ実装)
 https://backend.syadowcs-tournament.com
 
 ![tournament_list](https://user-images.githubusercontent.com/8272683/129481515-fdd439b1-d83e-40cc-ac15-d96d0d0a38bb.png)
 ![tournament_create](https://user-images.githubusercontent.com/8272683/129481519-58c7dd61-afba-42c5-8346-8b50b6a89b3e.png)
-![tournament_update](https://user-images.githubusercontent.com/8272683/129481521-bae2e2c7-6b7a-4489-9429-58113d479572.png)
 
 # 機能一覧
 - 基本機能
