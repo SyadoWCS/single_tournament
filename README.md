@@ -4,7 +4,6 @@
 
 基本機能はこちら
 https://syadowcs-tournament.com
-![ログイン機能](https://user-images.githubusercontent.com/8272683/129599708-bf07de08-4c7b-4ba8-8b21-b25d117d6a7d.gif)
 
 ![home](https://user-images.githubusercontent.com/8272683/129481464-a7c1ab38-aa16-469c-b08d-13d3aaece422.png)
 
