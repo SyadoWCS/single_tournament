@@ -35,18 +35,21 @@ func Register(c echo.Context) error {
 		})
 	}
 
-	// パスワードをエンコード
-	password, _ := bcrypt.GenerateFromPassword([]byte(data["password"]), 14)
+	var user model.User
+	user, err := UserCreate(data["first_name"], data["last_name"], data["email"], data["password"])
+	if err != nil {
+		return err
+	}
 
-	user := model.User{
-		FirstName: data["first_name"],
+	/*user := model.User{
+		FirstName: data["first_name"]
 		LastName:  data["last_name"],
 		Email:     data["email"],
 		Password:  password,
 	}
 
 	// データ登録
-	database.DB.Create(&user)
+	database.DB.Create(&user)*/
 
 	return c.JSON(http.StatusOK, user)
 }
@@ -144,4 +147,21 @@ func Logout(c echo.Context) error {
 	return c.JSON(http.StatusOK, echo.Map{
 		"message": "ログアウト成功",
 	})
+}
+
+func UserCreate(first_name string, last_name string, email string, not_encode_password string) (model.User, error) {
+	// パスワードをエンコード
+	password, _ := bcrypt.GenerateFromPassword([]byte(not_encode_password), 14)
+
+	user := model.User{
+		FirstName: first_name,
+		LastName:  last_name,
+		Email:     email,
+		Password:  password,
+	}
+
+	// データ登録
+	//database.DB.Create(&user)
+
+	return user, database.DB.Create(&user).Error
 }
