@@ -94,7 +94,9 @@ func TournamentDelete(c echo.Context) error {
 	}
 
 	var tournament model.Tournament
+	var entry model.Entry
 	database.DB.Where("id = ?", id).Delete(&tournament)
+	database.DB.Where("tournament_id = ?", id).Delete(&entry)
 
 	return c.Redirect(http.StatusFound, "/api/tournament/list")
 }

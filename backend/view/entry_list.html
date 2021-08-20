@@ -1,8 +1,10 @@
 {{define "entry_list"}}
    <p>大会参加者一覧</p>
-   {{range .}}
-      <a href="/api/entry/edit/{{.Id}}">{{.Name}}</a><br/>
+   {{range .Entry}}
+      <p>{{.Name}}
+         <button onclick="location.href='/api/entry/delete/{{.TournamentId}}/{{.Id}}'">削除</button>
+      </p>
    {{end}}
-   <p>大会新規作成</p>
-   <a href="/api/entry/new">大会を作成する</a>
+   <a href="/api/entry/new/{{.TournamentId}}">参加者を作成する</a><br>
+   <a href="/api/tournament/list">大会一覧に戻る</a>
 {{end}}
