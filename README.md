@@ -5,23 +5,25 @@
 基本機能はこちら
 https://syadowcs-tournament.com
 
-![home](https://user-images.githubusercontent.com/8272683/129481464-a7c1ab38-aa16-469c-b08d-13d3aaece422.png)
+![ホーム画面](https://user-images.githubusercontent.com/8272683/130260056-aee47f83-ab7f-429a-aa0a-d07201700eb8.png)
 
 ※サービス機能はこちら(APIのみ実装)
 https://backend.syadowcs-tournament.com
 
-![tournament_list](https://user-images.githubusercontent.com/8272683/129481515-fdd439b1-d83e-40cc-ac15-d96d0d0a38bb.png)
-![tournament_create](https://user-images.githubusercontent.com/8272683/129481519-58c7dd61-afba-42c5-8346-8b50b6a89b3e.png)
+![スクリーンショット 2021-08-21 0 55 08](https://user-images.githubusercontent.com/8272683/130260577-9b60aa1e-1691-47f7-8183-fa8035112146.png)
+![スクリーンショット 2021-08-21 0 59 20](https://user-images.githubusercontent.com/8272683/130261104-42b40922-2782-49c5-88e6-c1369e2638c6.png)
 
 # 機能一覧
 - 基本機能
-  - ユーザ登録機能
-  - ログイン機能
-  - ログアウト機能
+  - ユーザ登録
+  - ログイン
+  - ログアウト
 - サービス機能
   - 大会作成機能
   - 大会更新機能
   - 大会削除機能
+  - エントリー者の追加
+  - エントリー者の削除
 
 # 使用技術
 - フロントエンド
@@ -37,7 +39,7 @@ https://backend.syadowcs-tournament.com
   - Docker
   - CircleCI ※テスト自動化まで
 - インフラ
-  - AWS(EC2,RDS,VPC,Route53,ACM,ECR,ECS,Fargate) ※EC2はALB,SG,TGのために使用
+  - AWS(EC2,RDS,VPC,Route53,ACM,ECR,ECS,Fargate) ※EC2はALB関連設定,セキュリティグループ,ターゲットグループのために使用
   - Terraform(ALB,Route53,ECR,ECS,Fargate) ※本番環境に変更分反映のために必要なものだけ作成
 
 # 動作方法
