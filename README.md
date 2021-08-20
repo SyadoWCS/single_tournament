@@ -10,8 +10,8 @@ https://syadowcs-tournament.com
 ※サービス機能はこちら(APIのみ実装)
 https://backend.syadowcs-tournament.com
 
-![スクリーンショット 2021-08-21 0 55 08](https://user-images.githubusercontent.com/8272683/130260577-9b60aa1e-1691-47f7-8183-fa8035112146.png)
-![スクリーンショット 2021-08-21 0 59 20](https://user-images.githubusercontent.com/8272683/130261104-42b40922-2782-49c5-88e6-c1369e2638c6.png)
+![大会作成](https://user-images.githubusercontent.com/8272683/130261488-7855cc5e-ca85-439e-9ed1-e35c2a667c6d.png)
+![エントリー](https://user-images.githubusercontent.com/8272683/130261499-fca1a9e2-f91a-4c82-b521-7d5467875c02.png)
 
 # 機能一覧
 - 基本機能
@@ -19,11 +19,10 @@ https://backend.syadowcs-tournament.com
   - ログイン
   - ログアウト
 - サービス機能
-  - 大会作成機能
-  - 大会更新機能
-  - 大会削除機能
-  - エントリー者の追加
-  - エントリー者の削除
+  - 大会作成・更新・削除
+    - 大会名、参加上限数
+  - エントリー者の追加・削除
+    - 参加者名
 
 # 使用技術
 - フロントエンド
@@ -33,8 +32,9 @@ https://backend.syadowcs-tournament.com
   - Bootstrap
   - ESLint
 - バックエンド
-  - Golang
+  - Go
   - Echo
+  - gorm
 - 開発環境
   - Docker
   - CircleCI ※テスト自動化まで
