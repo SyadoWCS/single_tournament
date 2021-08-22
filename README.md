@@ -20,7 +20,7 @@ https://backend.syadowcs-tournament.com
   - ログアウト
 - サービス機能
   - 大会作成・更新・削除
-    - 大会名、参加上限数
+    - 大会名、参加人数上限設定
   - エントリー者の追加・削除
     - 参加者名
 
@@ -67,4 +67,4 @@ docker-compose up -d
 ![スクリーンショット 2021-08-15 16 19 31](https://user-images.githubusercontent.com/8272683/129470462-4dcdb8da-9a64-433e-bc44-a7419a443ed9.png)
 
 # ER図
-![スクリーンショット 2021-08-17 1 11 22](https://user-images.githubusercontent.com/8272683/129595256-0253d18e-4080-4359-9ea7-be5c835e754d.png)
+![スクリーンショット 2021-08-23 0 39 38](https://user-images.githubusercontent.com/8272683/130361245-64b40b9a-60b9-42ad-976c-d026f851ec37.png)
