@@ -10,7 +10,7 @@ https://syadowcs-tournament.com
 ※サービス機能はこちら(APIのみ実装)
 https://backend.syadowcs-tournament.com
 
-![大会作成](https://user-images.githubusercontent.com/8272683/130261488-7855cc5e-ca85-439e-9ed1-e35c2a667c6d.png)
+![大会](https://user-images.githubusercontent.com/8272683/130365181-dbe5c6df-d2f9-4c2c-be1c-5010319f2834.png)
 ![エントリー](https://user-images.githubusercontent.com/8272683/130261499-fca1a9e2-f91a-4c82-b521-7d5467875c02.png)
 
 # 機能一覧
@@ -20,7 +20,7 @@ https://backend.syadowcs-tournament.com
   - ログアウト
 - サービス機能
   - 大会作成・更新・削除
-    - 大会名、参加上限数
+    - 大会名、参加人数上限設定
   - エントリー者の追加・削除
     - 参加者名
 
@@ -66,5 +66,5 @@ docker-compose up -d
 # インフラ構成図
 ![スクリーンショット 2021-08-15 16 19 31](https://user-images.githubusercontent.com/8272683/129470462-4dcdb8da-9a64-433e-bc44-a7419a443ed9.png)
 
-# ER図
-![スクリーンショット 2021-08-17 1 11 22](https://user-images.githubusercontent.com/8272683/129595256-0253d18e-4080-4359-9ea7-be5c835e754d.png)
+# テーブル図
+![スクリーンショット 2021-08-23 0 39 38](https://user-images.githubusercontent.com/8272683/130361245-64b40b9a-60b9-42ad-976c-d026f851ec37.png)
