@@ -66,5 +66,5 @@ docker-compose up -d
 # インフラ構成図
 ![スクリーンショット 2021-08-15 16 19 31](https://user-images.githubusercontent.com/8272683/129470462-4dcdb8da-9a64-433e-bc44-a7419a443ed9.png)
 
-# テーブル図
+# テーブル構成図
 ![スクリーンショット 2021-08-23 3 20 14](https://user-images.githubusercontent.com/8272683/130365785-cb11fc5f-a158-4247-b850-e8954fa71cdd.png)
