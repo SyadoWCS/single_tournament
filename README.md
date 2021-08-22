@@ -67,4 +67,4 @@ docker-compose up -d
 ![スクリーンショット 2021-08-15 16 19 31](https://user-images.githubusercontent.com/8272683/129470462-4dcdb8da-9a64-433e-bc44-a7419a443ed9.png)
 
 # テーブル図
-![スクリーンショット 2021-08-23 0 39 38](https://user-images.githubusercontent.com/8272683/130361245-64b40b9a-60b9-42ad-976c-d026f851ec37.png)
+![スクリーンショット 2021-08-23 3 20 14](https://user-images.githubusercontent.com/8272683/130365785-cb11fc5f-a158-4247-b850-e8954fa71cdd.png)
