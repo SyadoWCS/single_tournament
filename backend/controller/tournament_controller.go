@@ -39,7 +39,7 @@ func TournamentCreate(c echo.Context) error {
 	// データ登録
 	database.DB.Create(&tournament)
 
-	return c.Redirect(http.StatusFound, "/api/tournament/list")
+	return c.Redirect(http.StatusFound, "/tournament/list")
 }
 
 func TournamentEdit(c echo.Context) error {
@@ -73,7 +73,7 @@ func TournamentUpdate(c echo.Context) error {
 
 	database.DB.Model(model.Tournament{}).Where("id = ?", id).Updates(&tournament)
 
-	return c.Redirect(http.StatusFound, "/api/tournament/list")
+	return c.Redirect(http.StatusFound, "/tournament/list")
 }
 
 func TournamentDelete(c echo.Context) error {
@@ -87,5 +87,5 @@ func TournamentDelete(c echo.Context) error {
 	database.DB.Where("id = ?", id).Delete(&tournament)
 	database.DB.Where("tournament_id = ?", id).Delete(&entry)
 
-	return c.Redirect(http.StatusFound, "/api/tournament/list")
+	return c.Redirect(http.StatusFound, "/tournament/list")
 }

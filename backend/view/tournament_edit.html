@@ -1,5 +1,5 @@
 {{define "tournament_edit"}}
-  <form method="post" action="/api/tournament/update/{{.Id}}">
+  <form method="post" action="/tournament/update/{{.Id}}">
     <label>
       大会名
       <input type="text" name="Name" value="{{.Name}}"/>
@@ -8,8 +8,8 @@
       参加人数
       <input type="text" name="People" value="{{.People}}"/>
     </label>
+    <input type="hidden" name="_method" value="PUT">
     <input type="submit" name="Submit" value="更新"/><br/>
-    <a href="/api/tournament/delete/{{.Id}}">大会を削除する</a>
   </form>
-  <a href="/api/tournament/list">大会一覧に戻る</a>
+  <a href="/tournament/list">大会一覧に戻る</a>
 {{end}}
