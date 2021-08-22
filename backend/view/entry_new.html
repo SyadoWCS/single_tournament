@@ -1,5 +1,5 @@
 {{define "entry_new"}}
-  <form method="post" action="/api/entry/create/{{.TournamentId}}">
+  <form method="post" action="/entry/create/{{.TournamentId}}">
     <p>新規で参加者を登録</p>
     <label>
       参加者名
@@ -7,5 +7,5 @@
     </label>
     <input type="submit" name="Submit" value="登録"/><br/>
   </form>
-  <a href="/api/entry/list/{{.TournamentId}}">参加者一覧に戻る</a>
+  <a href="/entry/list/{{.TournamentId}}">参加者一覧に戻る</a>
 {{end}}

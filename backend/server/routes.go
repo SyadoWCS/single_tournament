@@ -6,6 +6,7 @@ import (
 )
 
 func Setup(e *echo.Echo) {
+	e.Pre(controller.MethodOverride)
 	e.GET("/", controller.Home)
 	e.POST("/api/register", controller.Register)
 	e.POST("/api/login", controller.Login)
@@ -17,8 +18,8 @@ func Setup(e *echo.Echo) {
 	e.GET("/api/tournament/edit/:id", controller.TournamentEdit)
 	e.POST("/api/tournament/update/:id", controller.TournamentUpdate)
 	e.GET("/api/tournament/delete/:id", controller.TournamentDelete)
-	e.GET("/api/entry/list/:id", controller.EntryList)
-	e.GET("/api/entry/new/:tournament_id", controller.EntryNew)
-	e.POST("/api/entry/create/:tournament_id", controller.EntryCreate)
-	e.GET("/api/entry/delete/:tournament_id/:entry_id", controller.EntryDelete)
+	e.GET("/entry/list/:tournament_id", controller.EntryList)
+	e.GET("/entry/new/:tournament_id", controller.EntryNew)
+	e.POST("/entry/create/:tournament_id", controller.EntryCreate)
+	e.DELETE("/entry/delete/:tournament_id/:entry_id", controller.EntryDelete)
 }
