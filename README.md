@@ -7,7 +7,7 @@ https://syadowcs-tournament.com
 
 https://user-images.githubusercontent.com/8272683/130488170-85250c58-bdbe-4437-b341-64b54a375336.mov
 
-※サービス機能はこちら(APIのみ実装)
+サービス機能はこちら(APIのみ実装)
 https://backend.syadowcs-tournament.com/tournament/list
 
 https://user-images.githubusercontent.com/8272683/130489439-75568265-c54e-499a-87f1-123f82159045.mov
