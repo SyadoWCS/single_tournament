@@ -8,10 +8,9 @@ https://syadowcs-tournament.com
 https://user-images.githubusercontent.com/8272683/130488170-85250c58-bdbe-4437-b341-64b54a375336.mov
 
 ※サービス機能はこちら(APIのみ実装)
-https://backend.syadowcs-tournament.com
+https://backend.syadowcs-tournament.com/tournament/list
 
-![大会](https://user-images.githubusercontent.com/8272683/130365181-dbe5c6df-d2f9-4c2c-be1c-5010319f2834.png)
-![エントリー](https://user-images.githubusercontent.com/8272683/130261499-fca1a9e2-f91a-4c82-b521-7d5467875c02.png)
+https://user-images.githubusercontent.com/8272683/130489439-75568265-c54e-499a-87f1-123f82159045.mov
 
 # 機能一覧
 - 基本機能
