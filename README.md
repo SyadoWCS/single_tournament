@@ -7,6 +7,8 @@ https://syadowcs-tournament.com
 
 ![ホーム画面](https://user-images.githubusercontent.com/8272683/130260056-aee47f83-ab7f-429a-aa0a-d07201700eb8.png)
 
+https://user-images.githubusercontent.com/8272683/130487884-95511c5f-9347-49e4-b987-7fc5825429bd.mov
+
 ※サービス機能はこちら(APIのみ実装)
 https://backend.syadowcs-tournament.com
 
