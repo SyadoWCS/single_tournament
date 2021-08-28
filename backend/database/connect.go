@@ -33,4 +33,5 @@ func Connetct() {
 
 	db.AutoMigrate(&model.User{})
 	db.AutoMigrate(&model.Tournament{})
+	db.AutoMigrate(&model.Entry{})
 }

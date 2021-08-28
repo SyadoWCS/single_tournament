@@ -1,8 +1,16 @@
 {{define "tournament_list"}}
    <p>作成された大会一覧</p>
    {{range .}}
-      <a href="/api/tournament/edit/{{.Id}}">{{.Name}}</a><br/>
+      <a href="/entry/list/{{.Id}}">{{.Name}}</a>
+      <form method="post" style="display: inline" action="/tournament/delete/{{.Id}}">
+         <input type="hidden" name="_method" value="DELETE">
+         <input type="submit" name="Submit" value="大会を削除">
+      </form>
+      <a href="/tournament/edit/{{.Id}}">
+         <button type="button">大会を編集</button>
+      </a>
+      <br>
    {{end}}
    <p>大会新規作成</p>
-   <a href="/api/tournament/new">大会を作成する</a>
+   <a href="/tournament/new">大会を作成する</a>
 {{end}}

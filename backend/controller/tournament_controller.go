@@ -2,24 +2,13 @@ package controller
 
 import (
 	"encoding/json"
-	"io"
 	"net/http"
 	"strconv"
-	"text/template"
 
 	"github.com/SyadoWCS/single_tournament/database"
 	"github.com/SyadoWCS/single_tournament/model"
 	"github.com/labstack/echo/v4"
 )
-
-type Template struct {
-	templates *template.Template
-}
-
-func (t *Template) Render(w io.Writer, name string, data interface{}, c echo.Context) error {
-	// テンプレートを描画
-	return t.templates.ExecuteTemplate(w, name, data)
-}
 
 func TournamentList(c echo.Context) error {
 	var tournament []model.Tournament
@@ -50,7 +39,7 @@ func TournamentCreate(c echo.Context) error {
 	// データ登録
 	database.DB.Create(&tournament)
 
-	return c.Redirect(http.StatusFound, "/api/tournament/list")
+	return c.Redirect(http.StatusFound, "/tournament/list")
 }
 
 func TournamentEdit(c echo.Context) error {
@@ -84,7 +73,7 @@ func TournamentUpdate(c echo.Context) error {
 
 	database.DB.Model(model.Tournament{}).Where("id = ?", id).Updates(&tournament)
 
-	return c.Redirect(http.StatusFound, "/api/tournament/list")
+	return c.Redirect(http.StatusFound, "/tournament/list")
 }
 
 func TournamentDelete(c echo.Context) error {
@@ -94,7 +83,9 @@ func TournamentDelete(c echo.Context) error {
 	}
 
 	var tournament model.Tournament
+	var entry model.Entry
 	database.DB.Where("id = ?", id).Delete(&tournament)
+	database.DB.Where("tournament_id = ?", id).Delete(&entry)
 
-	return c.Redirect(http.StatusFound, "/api/tournament/list")
+	return c.Redirect(http.StatusFound, "/tournament/list")
 }

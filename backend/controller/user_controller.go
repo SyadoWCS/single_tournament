@@ -29,27 +29,13 @@ func Register(c echo.Context) error {
 	}
 
 	// パスワードチェック
-	if data["password"] != data["password_confirm"] {
-		return c.JSON(http.StatusBadRequest, echo.Map{
-			"message": "パスワードが一致しません",
-		})
-	}
+	ConfirmPassword(c, data["password"], data["password_confirm"])
 
 	var user model.User
 	user, err := UserCreate(data["first_name"], data["last_name"], data["email"], data["password"])
 	if err != nil {
 		return err
 	}
-
-	/*user := model.User{
-		FirstName: data["first_name"]
-		LastName:  data["last_name"],
-		Email:     data["email"],
-		Password:  password,
-	}
-
-	// データ登録
-	database.DB.Create(&user)*/
 
 	return c.JSON(http.StatusOK, user)
 }
@@ -147,6 +133,15 @@ func Logout(c echo.Context) error {
 	return c.JSON(http.StatusOK, echo.Map{
 		"message": "ログアウト成功",
 	})
+}
+
+func ConfirmPassword(c echo.Context, password string, password_confirm string) error {
+	if password != password_confirm {
+		return c.JSON(http.StatusBadRequest, echo.Map{
+			"message": "パスワードが一致しません",
+		})
+	}
+	return nil
 }
 
 func UserCreate(first_name string, last_name string, email string, not_encode_password string) (model.User, error) {
